@@ -74,15 +74,14 @@ WSGI_APPLICATION = 'Geseau.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'geseau_database',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'databasegeseau',
+        'USER': 'mysuperuser',
+        'PASSWORD': 'mysuperuser',
+        'HOST': 'databasegeseau.cnnyycew25bt.us-east-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
 
 #AWS S3 BUCKET
 
