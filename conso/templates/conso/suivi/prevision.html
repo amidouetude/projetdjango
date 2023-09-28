@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block etatactuel %}
+Prévision
+{% endblock etatactuel %}
+
+
+
+{% block content %}
+
+<h1>Prévision de consommation pour les 2 prochains jours</h1>
+    
+    <ul>
+        {% for value in forecast %}
+            <li> {{ value }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

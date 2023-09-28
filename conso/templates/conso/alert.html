@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block etatactuel %}
+Alert
+{% endblock etatactuel %}
+
+{% block content %}
+
+<h1>Liste des Alertes</h1>
+    <ul>
+        {% for alert in alerts %}
+            <li><a href="{% url 'lecture' alert.id %}">{{ alert.intitule }}</a></li>
+        {% empty %}
+            <li>Aucune alerte non lue.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}

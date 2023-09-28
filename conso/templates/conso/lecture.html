@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block etatactuel %}
+Alert 
+{% endblock etatactuel %}
+
+{% block content %}
+
+<h1>Détail de l'Alerte</h1>
+    <p>Date de l'alerte : {{ alert.date }}</p>
+    <p>{{ alert.message }}</p>
+    <p><a href="{% url 'alert' %}">Retour à la liste des alertes</a></p>
+
+
+{% endblock content %}
