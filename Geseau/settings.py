@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'Geseau.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'geseaumysql',
-        'USER': 'geseaumysql',
-        'PASSWORD': 'geseaumysql',
-        'HOST':'geseaumysql.cnnyycew25bt.us-east-1.rds.amazonaws.com',
+        'NAME': 'geseau_database',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST':'localhost',
         'PORT':'3306',
     }
 }
