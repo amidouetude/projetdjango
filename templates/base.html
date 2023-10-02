@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.17.0/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -30,7 +31,10 @@
             <div class="navbar-nav">
               <div class="nav-item text-nowrap icons">
                 <div class="btn btn-light">
-                  <span class="notification-icon"><a href="{% url 'alert' %}"><ion-icon name="notifications-outline"></ion-icon></a></span>
+                    <span class="notification-icon"><a href="{% url 'alert' %}">
+                        <ion-icon name="notifications-outline"></ion-icon>
+                    </a></span>
+                    <span class="badge badge-danger">{% if alert_count > 0 %}{{ alert_count }}{% endif %}</span>
                 </div>
                 <div class="btn btn-light">
                     <span class="profile-icon"><a href="{% url 'profil' %}"><ion-icon name="person-circle-outline"></ion-icon></a></span>
@@ -52,50 +56,50 @@
                         <li><a class="btn btn-light" href="{% url 'index' %}">
                             <div class="flex-container">
                                 <ion-icon name="speedometer-outline"></ion-icon>
-                                <span>Tableau de bord</span>
+                                <span><strong>Tableau de bord</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'section' %}">
                             <div class="flex-container">
                                 <ion-icon name="business-outline"></ion-icon>
-                                <span>Sections</span>
+                                <span><strong>Sections</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'historique' %}">
                             <div class="flex-container">
                                 <ion-icon name="calendar-outline"></ion-icon>
-                                <span>Historique</span>
+                                <span><strong>Historique</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'prevision' %}">
                             <div class="flex-container">
                                 <ion-icon name="bar-chart-outline"></ion-icon>
-                                <span>Prévisions</span>
+                                <span><strong>Prévisions</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'fuite' %}">
                             <div class="flex-container">
                                 <ion-icon name="play-outline"></ion-icon>
-                                <span>Gestion des fuites</span>
+                                <span><strong>Gestion des fuites</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'budget' %}">
                             <div class="flex-container">
                                 <ion-icon name="diamond-outline"></ion-icon>
-                                <span>Budget</span>
+                                <span><strong>Budget</strong></span>
                             </div>
                         </a></li>
                         <li><a class="btn btn-light" href="{% url 'faq' %}">
                             <div class="flex-container">
                                 <ion-icon name="help-circle-outline"></ion-icon>
-                                <span>FAQ</span>
+                                <span><strong>FAQ</strong></span>
                             </div>
                         </a></li>
                     </ul>
                     <a class="btn btn-light" href="{% url 'logout' %}" class="logout-button">
                         <div class="flex-container">
                             <ion-icon name="power-outline"></ion-icon>
-                            <span>Déconnexion</span>
+                            <span><strong>Déconnexion</strong></span>
                         </div>
                     </a>
                 </nav>

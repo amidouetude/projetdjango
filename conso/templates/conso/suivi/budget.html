@@ -8,28 +8,17 @@ Budget
 <div class="container mt-4">
     <h1 class="text-center">Gestion du Budget</h1>
 
-    {% if messages %}
-    <div class="alert alert-dismissible{% if message.tags %} {{ message.tags }}{% endif %}">
-        <ul class="list-unstyled">
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    </div>
-    {% endif %}
-
     <div class="row mt-4">
         <div class="col-md-12">
             <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="thead-dark">
+                <table class="table table-striped table-bordered table-hover text-center">
+                    <thead class="sticky-top text-white">
                         <tr>
                             <th>Budget alloué</th>
                             <th>Consommation du mois</th>
                             <th>Montant de la consommation du mois</th>
-                            <th>Dépenses totales</th>
                             <th>Montant des commandes</th>
-                            <th>Reste du budget</th>
+                            <th>Portefeuille</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,8 +26,7 @@ Budget
                             <td>{{ montant_budget }}</td>
                             <td>{{ period_consommation }}</td>
                             <td>{{ montant_consommation }}</td>
-                            <td>{{ total_depenses }}</td>
-                            <td>{{ montant_commande }}</td>
+                            <td>{{ montant_depense }}</td>
                             <td>{{ reste_budget }}</td>
                         </tr>
                     </tbody>
@@ -58,18 +46,18 @@ Budget
                 </div>
                 <button type="submit" class="btn btn-primary">Définir le budget</button>
             </form>
-        </div>
+        </div>        
         <div class="col-md-6">
             <h2>Définition des dépenses</h2>
             <form action="{% url 'budget' %}" method="post">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="montant_commande">Montant de la commande :</label>
-                    <input type="number" name="montant_commande" id="montant_commande" class="form-control">
+                    <label for="depense">Montant des dépenses :</label>
+                    <input type="number" name="depense" id="depense" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">Définir le montant de la commande</button>
+                <button type="submit" class="btn btn-primary">Définir le montant des dépenses</button>
             </form>
-        </div>
+        </div>   
     </div>
 </div>
 

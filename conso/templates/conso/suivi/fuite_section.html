@@ -6,7 +6,6 @@ Analyse fuite - {{ section.nom_section }}
 
 {% block content %}
     <h1>Section : {{ section.nom_section }}</h1>
-    <p>Description : {{ section.description }}</p>
 
     <form method="post">
         {% csrf_token %}
@@ -19,10 +18,7 @@ Analyse fuite - {{ section.nom_section }}
         <input type="submit" value="Analyser">
     </form>
 
-    {% if total_consommation %}
+    
         <p>Consommation durant la période : {{ total_consommation }} unités</p>
         <p>Une consommation a été enregistrée pendant la période spécifiée.</p>
-    {% else %}
-        <p>Aucune consommation n'a été enregistrée pendant la période spécifiée.</p>
-    {% endif %}
 {% endblock content %}

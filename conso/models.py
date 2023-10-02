@@ -46,20 +46,18 @@ class Consommation(models.Model):
 class Budget(models.Model):
     entreprise = models.ForeignKey(Entreprise, null=True, blank=True, on_delete=models.CASCADE)
     montant = models.DecimalField(max_digits=10, decimal_places=2)
-    solde = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # Ajoutez ce champ
     description = models.TextField(blank=True, null=True)
     date_creation = models.DateTimeField(auto_now_add=True)
-
 
 class Depense(models.Model):
     entreprise = models.ForeignKey(Entreprise, null=True, blank=True, on_delete=models.CASCADE)
     montant = models.DecimalField(max_digits=10, decimal_places=2)
-    budget = models.ForeignKey(Budget, null=True, blank=True, on_delete=models.SET_NULL)  # Référence au budget
-    description = models.TextField(blank=True, null=True)  # Ajoutez un champ de description si nécessaire
+    description = models.TextField(blank=True, null=True)
     date_creation = models.DateTimeField(auto_now_add=True)
 
 
 class Alert(models.Model):
+    entreprise = models.ForeignKey(Entreprise, null=True, blank=True, on_delete=models.CASCADE)
     intitule = models.TextField()
     message = models.TextField()
     date = models.DateTimeField(auto_now_add=True)

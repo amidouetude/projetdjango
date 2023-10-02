@@ -67,7 +67,7 @@ body {
 
 /* Sidebar styles */
 .sidebar {
-  height: inherit;
+  height: inherit 100vh;
   background-color: #10b3d8;
   color: #fff;
   width: 250px;

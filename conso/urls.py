@@ -34,7 +34,7 @@ urlpatterns = [
     path('alert/<str:pk>/', views.read_alert, name='lecture'),
     path('budget/',views.budget,name="budget"),
     path('fuite/',views.fuite,name="fuite"),
-    path('fuite/section/<str:pk>/',views.fuite_section,name="fuite_section"),
+    #path('fuite/section/<str:pk>/',views.fuite_section,name="fuite_section"),
 
 
     ###Vues vers les statistiques descriptives des historiques
@@ -60,6 +60,8 @@ urlpatterns = [
     ###Vue vers la consommation
     path('conso/section',views.ConsSection,name='cons_section'),
     path('conso/dispositif',views.ConsDispo,name='cons_dispo'),
+
+    path('daily/', views.prevision_best, name='daily_forecast'),
     
     
 ]

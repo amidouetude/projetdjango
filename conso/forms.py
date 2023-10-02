@@ -24,6 +24,7 @@ class DispositifForm(forms.ModelForm):
         widget = forms.Select(attrs={'placeholder': "Ex : ONEA, Forage"}),
         choices=[("ONEA", "ONEA"),("Forage", "Forage")]
     )
+
     class Meta:
         model = Dispositif
         fields = '__all__'

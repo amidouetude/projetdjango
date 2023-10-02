@@ -72,22 +72,21 @@ WSGI_APPLICATION = 'Geseau.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'databasegeseau',
-        'USER': 'mysuperuser',
-        'PASSWORD': 'mysuperuser',
-        'HOST': 'databasegeseau.cnnyycew25bt.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'geseau_database',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST':'localhost',
+        'PORT':'3306',
     }
 }
 
 #AWS S3 BUCKET
 
-AWS_ACCES_KEY_ID = 'AKIAYQZLJDUI7OXNGZEY'
-AWS_SECRET_ACCES_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'geseau'
-AWS_S3_SIGNATURE_NAME = 's3v4'
-AWS_S3_REGION_NAME = 'us-east-1'
+AWS_ACCES_KEY_ID = 'AWS_ACCES_KEY_ID'
+AWS_SECRET_ACCES_KEY = 'AWS_SECRET_ACCES_KEY'
+AWS_STORAGE_BUCKET_NAME = 'AWS_STORAGE_BUCKET_NAME'
+AWS_S3_REGION_NAME = 'AWS_S3_REGION_NAME'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 AWS_S3_VERITY = True
@@ -143,3 +142,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'Geseau/static/media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db"  # Utilisation de la base de données pour stocker les sessions
+
